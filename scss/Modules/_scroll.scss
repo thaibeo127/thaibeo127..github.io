@@ -1,0 +1,110 @@
+#My__Scroll {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  .scroll__chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move_scroll 2s ease-out infinite;
+    -webkit-animation: move_scroll 2s ease-out infinite;
+    -webkit-transform: scale3d(0.5, 0.5, 0.5);
+    -moz-transform: scale3d(0.5, 0.5, 0.5);
+    -ms-transform: scale3d(0.5, 0.5, 0.5);
+    -o-transform: scale3d(0.5, 0.5, 0.5);
+  }
+  .scroll__chevron:first-child {
+    animation: move_scroll 2s ease-out 0.7s infinite;
+    -webkit-animation: move_scroll 2s ease-out 0.7s infinite;
+  }
+  .scroll__chevron:nth-child(2) {
+    animation: move_scroll 2s ease-out 1.4s infinite;
+    -webkit-animation: move_scroll 2s ease-out 1.4s infinite;
+  }
+  .scroll__chevron:before,
+  .scroll__chevron:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+  }
+  .scroll__chevron:before {
+    background-image: linear-gradient(to right, $clr-secon, $clr-bg);
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+  .scroll__chevron:after {
+    background-image: linear-gradient(to left, $clr-secon, $clr-bg);
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+}
+
+@keyframes move_scroll {
+  25% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  67% {
+    opacity: 1;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+  }
+}
+
+//---return to top
+#return-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 50px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  &:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  i {
+    color: $clr-text;
+    margin: 0;
+    position: relative;
+    left: 1px;
+    top: 10px;
+    font-size: 27px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    &:hover {
+      color: $clr-bg;
+      top: 5px;
+    }
+  }
+}
+@include respon(500px) {
+  #return-to-top {
+    right: 25px;
+  }
+}

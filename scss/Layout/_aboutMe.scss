@@ -1,0 +1,15 @@
+.aboutMe{
+    p{
+        position: relative;
+        span{
+            position: absolute;
+            left: 180px;
+        }
+    }
+    @include respon(500px){
+        p span{
+            position: unset;
+            margin-left: $dim-1;
+        }
+    }
+}

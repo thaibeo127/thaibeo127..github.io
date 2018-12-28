@@ -1,0 +1,136 @@
+#Portfolio{
+    #myBtn__Portfolio{
+        button{
+            margin: 0 $dim-1 $dim-1;
+            min-width: 100px;
+        }
+    }
+    #list__Portfolio{
+        .port__Item{
+            padding: $dim-2 $dim-1;
+            width: 33%;
+            max-height: 200px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                min-height: 200px;
+                cursor: pointer;
+                @extend .transition;
+                &:hover{
+                    @extend .transition;
+                }
+            }
+        }
+    }
+}
+
+/* The Modal/Lightbox */
+body{
+    position: relative;
+    #myModalPortfolio {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.84);
+        max-width: 100%;
+        max-height: 100%;
+        padding: $dim-2 $dim-5;
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: $clr-bg;
+            font-size: $fs-1*2;
+            font-weight: bold;
+            @extend .transition;
+            &:hover, &:focus{
+                @extend .transition;
+                color: $clr-text;
+            }
+        }
+        .modal-content{
+            background-color: rgba(49,60,66,0);
+            border: none;
+            .carousel-indicators {
+                position: absolute;
+                top: 96%;
+                .active{
+                    background-color: $clr-text;
+                }
+            }
+            img{
+                max-width: 900px;
+                height: -webkit-fill-available;
+                object-fit: scale-down;
+            }
+            .carousel-control-icon{
+                position: absolute;
+                top: 45%;
+                font-size: $fs-1*2.5;
+                color: $clr-bg;
+                @extend .transition;
+                &:hover{
+                    @extend .transition;
+                    color: $clr-text;
+                }
+            }
+            .carousel-control-next, .carousel-control-prev{
+                width: 0%;
+            }
+            .carousel-control-next > .carousel-control-icon{
+                right: 0;
+            }
+            .carousel-control-prev > .carousel-control-icon{
+                left: 0;
+            }
+        }
+    }
+}
+@include respon($md){
+    body #myModalPortfolio .modal-content img{
+        max-width: 660px;
+    }
+}
+@include respon($sm){
+    #Portfolio #list__Portfolio .port__Item {
+        width: 50%;
+    }
+    body #myModalPortfolio .modal-content img{
+        max-width: 470px;
+    }
+}
+@include respon(xs){
+    body{
+        #myModalPortfolio{
+            .modal-content{
+                img{
+                    max-width: 400px;
+                }
+            }
+        }
+    }
+}
+@include respon(480px){
+    body #myModalPortfolio .modal-content img{
+        max-width: 320px;
+    }
+}
+@include respon(414px){
+    #Portfolio #myBtn__Portfolio button {
+        margin: 0px 5px 20px;
+    }
+    #list__Portfolio > .row{
+        margin: 0;
+    }
+    #Portfolio #list__Portfolio .port__Item img{
+        height: 120px;
+    }
+}
+@include respon(375px){
+    body #myModalPortfolio .modal-content img{
+        max-width: 270px;
+    }
+}
+@include respon(320px){
+    body #myModalPortfolio .modal-content img{
+        max-width: 220px;
+    }
+}

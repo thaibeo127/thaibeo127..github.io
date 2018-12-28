@@ -1,0 +1,93 @@
+#BgImgTop{
+    background-image: url('../img/bg2.jpg');
+    @extend .bgimg_properties;
+    height: 626px;
+    background-color: rgba(26, 26, 26, 0.6);
+    .bgImg__content{
+        text-align: left;
+        height: inherit;
+        h1{
+            color: $clr-secon;
+            font-size: 60px;
+            padding: $dim-1*21 0 0;
+            text-transform: uppercase;
+            animation: glow 1.5s ease-in-out infinite alternate;
+            -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        svg {
+            font-family: $ff-highlight;
+            font-size: 40px;
+            padding: 0;
+            width: 100%;
+            fill: none;
+            text{
+                stroke: $clr-bg;
+            }
+            tspan > tspan {
+                stroke-dasharray: 1500;
+                stroke-dashoffset: -1500;
+                @for $i from 1 through 26 {
+                    &:nth-of-type(#{$i}) {
+                        animation: draw #{$i * 150}ms forwards 1.5s;
+                    }
+                }
+            }
+        }
+        .my__scroll{
+            margin: 0 auto;
+            padding-top: $dim-1*12;
+        }
+    }
+    @include respon($xl){
+        svg {
+            width: 100%;
+        }
+    }
+    @include respon($lg){
+        svg {
+            width: 120%;
+        }
+    }
+    @include respon($sm){
+        svg {
+            width: 180%;
+        }
+    }
+    @include respon(xs){
+        svg {
+            width: 200%;
+        }
+    }
+}
+@keyframes draw {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+@include respon($md){
+    #BgImgTop{
+        height: 500px;
+        .bgImg__content{
+            h1{
+                width: min-content;
+                font-size: 50px;
+                padding: $dim-1*15 0 0;
+            }
+            svg {
+                width: 100%;
+            }
+            .my__scroll{
+                padding-top: $dim-1*8;
+            }
+        }
+    }
+}
+@include respon(500px){
+    #BgImgTop{
+        .bgImg__content{
+            h1{
+                font-size: 40px;
+            }
+        }
+    }
+}

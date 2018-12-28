@@ -1,0 +1,11 @@
+//---created & running progress line---
+@each $id, $width  in (skill__html, 90%), (skill__bs4, 90%), (skill__sass,82%), (skill__ui, 83%), (skill__javascript, 88%), (skill__typescript, 80%), (skill__tools, 75%), (skill__angular, 72%), (skill__c, 60%), (skill__react, 55%) {
+    ##{$id}{
+        visibility: visible;
+        @keyframes progress-running-#{$id} {
+            0% {width: 0%;}
+            100% {width: $width;}
+        }
+        animation: progress-running-#{$id} 3s 1 forwards;
+    }
+}

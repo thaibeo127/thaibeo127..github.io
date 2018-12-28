@@ -1,0 +1,23 @@
+footer {
+  p {
+    i {
+      color: $clr-bg;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+    a {
+      color: $clr-bg;
+      @extend.transition;
+      &:hover {
+        text-decoration: none;
+        color: $clr-text;
+        box-shadow: 2px 3px 3px $clr-text;
+        @extend.transition;
+        transform: rotate(360deg) scale(1.5);
+        -webkit-transform: rotate(360deg) scale(1.5);
+        -moz-transform: rotate(360deg) scale(1.5);
+        -ms-transform: rotate(360deg) scale(1.5);
+        -o-transform: rotate(360deg) scale(1.5);
+      }
+    }
+  }
+}

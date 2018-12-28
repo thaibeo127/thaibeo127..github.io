@@ -1,0 +1,26 @@
+#Wrapper {
+  text-align: center;
+  height: fit-content;
+  background-image: linear-gradient(to top right, $clr-secon, $clr-bg);
+  @media screen and (min-width: 1360px) {
+    .container {
+      max-width: 1300px;
+    }
+  }
+}
+@include respon(1024px) {
+  body {
+    font-size: 18px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: unset;
+  }
+  h3 {
+    font-size: 30px;
+  }
+}

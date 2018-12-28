@@ -1,0 +1,22 @@
+.my__btn {
+  background-color: $clr-bg;
+  border: 1px solid $clr-text;
+  color: $clr-text;
+  @extend .transition;
+  box-shadow: 2px 3px 3px $clr-text;
+  padding: $dim-1/2;
+  &:hover,
+  &.active,
+  &:focus {
+    color: $clr-bg;
+    border: none;
+    background-color: $clr-text;
+    box-shadow: 2px 5px 5px $clr-main;
+    @extend.transition;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+}

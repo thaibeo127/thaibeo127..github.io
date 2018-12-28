@@ -1,0 +1,126 @@
+#Represent {
+  position: fixed;
+  z-index: 1;
+  top: 60px;
+  width: 25%;
+  padding: 0 0 0 15px;
+  display: block;
+  display: none;
+  .card {
+    border: none;
+  }
+  .repres__card {
+    max-width: 270px;
+    margin: 0 auto;
+    background-image: linear-gradient(
+      to left,
+      $clr-bg,
+      $clr-secon,
+      $clr-secon,
+      $clr-bg
+    );
+    .card__header {
+      width: 96%;
+      height: 240px;
+      margin: $dim-2 auto 0;
+      background-image: url("../img/avatar1.png");
+      @extend.bgimg_properties,.transition;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 2px 2px 3px $clr-text;
+      animation: scaleAvatar 4s infinite;
+      -webkit-animation: scaleAvatar 4s infinite;
+      &:hover {
+        background-image: url("../img/avatar3.PNG");
+        box-shadow: -4px -4px 3px $clr-text;
+        @extend.transition;
+      }
+    }
+    .card-body {
+      padding: $dim-2 $dim-1;
+      .card-title {
+        font-family: $ff-highlight;
+        margin-bottom: $dim-1;
+        letter-spacing: 2px;
+        @extend.transition;
+        animation: scaleAvatar 4s infinite 2s;
+        -webkit-animation: scaleAvatar 4s infinite 2s;
+      }
+      .card-text {
+        margin-bottom: $dim-1;
+      }
+      .iconList {
+        a {
+          font-size: 135%;
+          color: $clr-text;
+          margin: 0 $dim-1;
+          i {
+            @extend.transition;
+            &:hover {
+              color: $clr-text;
+              box-shadow: 2px 3px 3px $clr-text;
+              @extend.transition;
+              transform: rotate(360deg) scale(1.5);
+              -webkit-transform: rotate(360deg) scale(1.5);
+              -moz-transform: rotate(360deg) scale(1.5);
+              -ms-transform: rotate(360deg) scale(1.5);
+              -o-transform: rotate(360deg) scale(1.5);
+            }
+          }
+        }
+      }
+    }
+    .card-footer {
+      max-height: 100px;
+      background-image: linear-gradient(
+        to left,
+        $clr-secon,
+        $clr-bg,
+        $clr-secon
+      );
+      i {
+        animation: translateY 1s infinite ease-out;
+        -webkit-animation: translateY 1s infinite ease-out;
+      }
+    }
+  }
+  #IconHideRepresent {
+    cursor: pointer;
+    display: none;
+    background-color: $clr-bg;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+#IconShowRepresent {
+  cursor: pointer;
+  display: none;
+  font-size: 2em;
+  position: fixed;
+  z-index: 1;
+  top: 300px;
+  padding: 0 0 0 0.3rem;
+  i {
+    animation: wave 1s infinite;
+    -webkit-animation: wave 1s infinite;
+  }
+}
+@media screen and (min-width: 2560px) {
+  #Represent {
+    margin-left: 12%;
+  }
+}
+@include respon(1024px) {
+  #Represent .card-footer {
+    padding: 0.75rem;
+  }
+}
+@include respon($md) {
+  #Represent {
+    top: 30px;
+    width: 300px;
+    #IconHideRepresent {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@mixin line($width, $height, $color, $dim){
+    width: $width;
+    height: $height;
+    background-color: $color;
+    margin-bottom: $dim;
+}
+
+@mixin border-radius($value) {
+    border-radius: $value ;
+    -webkit-border-radius: $value ;
+    -moz-border-radius: $value ;
+    -ms-border-radius: $value ;
+    -o-border-radius: $value ;
+}
+
+@mixin trans-rot ($deg){
+    transform: rotate($deg);
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    -o-transform: rotate($deg);
+}
+
+@mixin respon($breakpoint) {
+    @if $breakpoint == $xl {
+        @media screen and (min-width: $xl){ 
+            @content;
+        }
+    }
+    @else if $breakpoint == $lg {
+        @media screen and (max-width: $xl - 1){ 
+            @content;
+        }
+    }
+    @else if $breakpoint == $md {
+        @media screen and (max-width: $lg - 1){ 
+            @content;
+        }
+    }
+    @else if $breakpoint == $sm {
+        @media screen and (max-width: $md - 1){ 
+            @content;
+        }
+    }
+    @else if $breakpoint == xs {
+        @media screen and (max-width: $sm - 1){ 
+            @content;
+        }
+    }
+    @else {
+        @media screen and (max-width: $breakpoint){ 
+            @content;
+        }
+    }
+}

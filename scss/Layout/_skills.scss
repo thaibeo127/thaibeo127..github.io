@@ -1,0 +1,26 @@
+.skills {
+  .skills__content > .row {
+    margin-bottom: $dim-1;
+  }
+  .skill__item {
+    position: relative;
+    span:nth-child(2) {
+      position: absolute;
+      right: 8%;
+    }
+    span:last-child {
+      position: absolute;
+      right: 0;
+    }
+  }
+  .progress {
+    height: 12px;
+    border: 1px solid $clr-text;
+    background-color: $clr-bg;
+    margin-bottom: $dim-2;
+    .progress-bar {
+      background-color: $clr-text;
+    }
+    //---created & running progress line in file _function.scss---
+  }
+}

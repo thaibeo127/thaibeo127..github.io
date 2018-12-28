@@ -1,0 +1,28 @@
+#MainContent{
+    margin-top: 30px;
+    padding: 0;
+    section{
+        text-align: left;
+        margin-bottom: $dim-4;
+        > .row{
+            padding-top: $dim-3;
+        }
+        h3{
+            cursor: pointer;
+            width: 66%;
+            padding-left: $dim-1;
+            margin-bottom: $dim-2;
+            box-shadow: -4px -4px 3px $clr-text;
+            @extend.transition;
+            &:hover{
+                box-shadow: 4px 4px 3px $clr-text;
+                @extend.transition;
+                transform: translate(30px, -10px);
+                -webkit-transform: translate(30px, -10px);
+                -moz-transform: translate(30px, -10px);
+                -ms-transform: translate(30px, -10px);
+                -o-transform: translate(30px, -10px);
+            }
+        }
+    }
+}
